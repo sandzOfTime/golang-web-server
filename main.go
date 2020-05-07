@@ -19,6 +19,10 @@ func main() {
 	router.HandleFunc("/", homeLink)
 	router.HandleFunc("/customers/{id}", handler.GetOneCustomer).Methods("GET")
 	router.HandleFunc("/customers", handler.GetCustomers).Methods("GET")
+	router.HandleFunc("/publishers/{id}", handler.GetOnePublisher).Methods("GET")
+	router.HandleFunc("/publishers", handler.GetAllPublishers).Methods("GET")
+	router.HandleFunc("/authors/{id}", handler.GetOneAuthor).Methods("GET")
+	router.HandleFunc("/authors", handler.GetAuthors).Methods("GET")
 
 	log.Fatal(http.ListenAndServe(":8081", router))
 
