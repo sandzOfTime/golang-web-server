@@ -23,6 +23,7 @@ func main() {
 	router.HandleFunc("/publishers", handler.GetAllPublishers).Methods("GET")
 	router.HandleFunc("/authors/{id}", handler.GetOneAuthor).Methods("GET")
 	router.HandleFunc("/authors", handler.GetAuthors).Methods("GET")
+	router.HandleFunc("/books/shopping_basket/{id}", handler.UpdateCount).Methods("PUT")
 
 	log.Fatal(http.ListenAndServe(":8081", router))
 
